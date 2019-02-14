@@ -9,8 +9,8 @@ enable_testing()
 add_subdirectory(vendor/fmt)
 add_subdirectory(vendor/GSL)
 
-add_executable(test-vscode main.cpp init.cpp)
-target_link_libraries(test-vscode fmt::fmt GSL)
+add_executable(lesson01 main.cpp init.cpp)
+target_link_libraries(lesson01 fmt::fmt GSL)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
