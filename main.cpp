@@ -4,19 +4,22 @@
 #include <vector>
 #include <string_view>
 #include <string>
+#include <cstdint>
+
+auto fun(gsl::span<int> sp) {
+    sp[0] = 5;
+    for (int e : sp)
+        fmt::print("{} ", e);
+    fmt::print("\n");
+}
 
 void start(std::string_view appname, gsl::span<std::string> args)
 {
-    std::vector vec{1, 2, 3};
-    std::vector vec2{vec, vec};
-    fmt::print("Hello, world!\n");
-    std::string s{fmt::format("\"{}\"", appname)};
-    fmt::print("My name is {}\n", s);
-    if (!args.empty()) {
-        std::ifstream file{args[0]};
-        if (int a; file >> a)
-            fmt::print("read {}\n", a);
-        for (std::string s; file >> s;)
-            fmt::print("{}\n", s);
-    }
+    std::vector<int> v(4);
+    std::vector v2{{1,2,3}}, v3{4}, v4{v};
+    std::array a{4,5,6};
+    for (int idx=0; idx<v2.size(); ++idx)
+        fmt::print("{} ", v2[idx]);
+    fmt::print("\n");
+    fun(v2);
 }
