@@ -1,10 +1,14 @@
 #include <gsl/gsl>
+#include <vector>
+#include <string_view>
 
-void start(char const*, gsl::span<char const* const>);
+void start(std::string_view, gsl::span<std::string>);
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-    start(*argv, gsl::span<char const* const>{
-                     static_cast<char const* const*>(argv) + 1, argc});
+    std::vector<std::string> args(argc);
+    for (int i=0; i<argc; ++i)
+        args[i] = argv[i];
+    start(args[0], gsl::span<std::string>{args}.subspan(1));
     return 0;
 }
