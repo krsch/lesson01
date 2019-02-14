@@ -1,3 +1,6 @@
 [submodule "vendor/fmt"]
 	path = vendor/fmt
 	url = https://github.com/fmtlib/fmt.git
+[submodule "vendor/GSL"]
+	path = vendor/GSL
+	url = https://github.com/Microsoft/GSL.git

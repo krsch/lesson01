@@ -7,8 +7,10 @@ include(CTest)
 enable_testing()
 
 add_subdirectory(vendor/fmt)
+add_subdirectory(vendor/GSL)
+
 add_executable(test-vscode main.cpp)
-target_link_libraries(test-vscode fmt::fmt)
+target_link_libraries(test-vscode fmt::fmt GSL)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
