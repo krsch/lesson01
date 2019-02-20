@@ -5,6 +5,9 @@ before_install:
 compiler: clang
 dist: xenial
 
+env:
+  - CXXFLAGS=-stdlib=libc++ 
+
 script:
   - cd build
   - cmake ..
