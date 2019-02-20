@@ -1,3 +1,5 @@
+[![Build Status on Linux](https://travis-ci.org/krsch/lesson01.svg?branch=master)](https://travis-ci.org/krsch/lesson01)
+[![Build Status on Windows](https://ci.appveyor.com/api/projects/status/github/krsch/lesson01?svg=true)](https://ci.appveyor.com/project/krsch/lesson01)
 Установка
 ---------
 
