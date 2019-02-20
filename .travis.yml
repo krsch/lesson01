@@ -1,0 +1,11 @@
+language: cpp
+before_install:
+  - sudo apt-get install -y libboost-all-dev
+
+compiler: clang
+dist: xenial
+
+script:
+  - cd build
+  - cmake ..
+  - cmake --build .
